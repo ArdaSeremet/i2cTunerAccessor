@@ -6,12 +6,14 @@
 
 i2cTunerAccessor tuner(TUNER_ADDRESS);
 
-void setup() {
+void setup()
+{
 	tuner.begin();
 	Serial.begin(9600);
 }
 
-void loop() {
+void loop()
+{
 	int dataToSend = 0xAE;
 	tuner.writeToRegister(REGISTER_ADDRESS, dataToSend);
 

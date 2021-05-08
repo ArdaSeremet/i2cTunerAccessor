@@ -6,15 +6,17 @@
 
 i2cTunerAccessor tuner(TUNER_ADDRESS);
 
-void setup() {
+void setup()
+{
 	tuner.begin();
 	Serial.begin(9600);
 }
 
-void loop() {
-	int registerValue;
+void loop()
+{
+	uint8_t registerValue;
 	registerValue = tuner.readFromRegister(REGISTER_ADDRESS);
-	
+
 	Serial.print('Data in register 0x');
 	Serial.print(REGISTER_ADDRESS, HEX);
 	Serial.print(' is ');
